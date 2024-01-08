@@ -1,0 +1,74 @@
+code {
+    background-color: #333333;
+    color: #c7c7c7;
+    font-family: 'Consolas', 'Monaco', 'Courier New', monospace;
+    border-radius: 3px;
+    display: block;
+    overflow-x: scroll;
+}
+
+/* HTML */
+
+code.html .element {
+    color: #e06c75;
+}
+
+code.html .attribute_value {
+    color: #98c379;
+}
+
+code.html .attribute {
+    color: #d39855;
+}
+
+code.html .comment {
+    color: #5c6370;
+}
+
+/* Python */
+
+code.python .import {
+    color: #c678bc;
+}
+
+code.python .function {
+    color: #61afef;
+}
+
+code.python .string {
+    color: #98c379;
+}
+
+code.python .comment {
+    color: #5c6370;
+}
+
+code.python .class {
+    color: #c678bc;
+}
+
+code.python .classname {
+    color: #e5c07b;
+}
+
+code.python .function {
+    color: #61afef;
+}
+
+/* JavaScript */
+
+code.javascript .class {
+    color: #c678bc;
+}
+
+code.javascript .classname {
+    color: #e5c07b;
+}
+
+code.javascript .comment {
+    color: #5c6370;
+}
+
+code.javascript .keyword {
+    color: #c678bc;
+}

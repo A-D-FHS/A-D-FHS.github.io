@@ -1,0 +1,114 @@
+body {
+    background-color: #121212;
+    color: #E0E0E0;
+    font-family: 'Roboto', sans-serif;
+    font-size: 1rem;
+    padding: 10px;
+    display: flex;
+    align-items: center;
+    flex-direction: column;
+    text-align: center;
+}
+
+h1 {
+    font-size: 3rem;
+    color: #BB86FC;
+    margin-bottom: 1rem;
+}
+
+h2, p {
+    margin: 0;
+}
+
+section p {
+    font-size: small;
+}
+
+.category {
+    min-width: 80vw;
+    border-radius: 10px;
+    background-color: #1E1E1E;
+    margin: 0 auto;
+    margin-bottom: 1rem;
+    padding: 1rem;
+    position: relative; /* Für die Dropdown-Indikatoren */
+}
+
+.items {
+    align-items: baseline;
+    border-radius: 10px;
+    margin: 0;
+    margin-bottom: 1rem;
+    margin-top: 1rem;
+    padding: 1rem;
+    background-color: #252525;
+    display: none;
+}
+
+.items a {
+    color: #E0E0E0;
+    text-decoration: none;
+    border-radius: 10px;
+    background-color: #333333;
+    transition: background-color 0.3s ease, transform 0.3s ease;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    margin: 1rem;
+    height: 150px;
+    width: 150px;
+    transition: max-height 0.3s, opacity 0.3s;
+}
+
+.items img {
+    width: 64px;
+    height: 64px;
+    margin-bottom: 1rem;
+}
+
+.items a:hover {
+    background-color: #BB86FC;
+    transform: scale(1.05);
+}
+
+.collapsed .items {
+    max-height: 100vh;
+    opacity: 1;
+}
+
+.category:after {
+    content: '=';
+    position: absolute; 
+    top: 15px;
+    right: 15px;
+    color: white;
+    font-weight: bold;
+}
+
+.collapsed:after {
+    content: '-';
+    position: absolute;
+    top: 15px;
+    right: 15px;
+}
+
+.links {
+    position: absolute;
+    top: 1rem;
+}
+
+.links a {
+    color: #4e89ff;
+    font-size: small;
+    text-decoration: none;
+    background-size: 0 1px, auto;
+    background-repeat: no-repeat;
+    background-position: left bottom, left bottom;
+    background-image: linear-gradient(#4e89ff, #4e89ff), none;
+    transition: background-size 0.1s ease-in-out;
+}
+
+.links a:hover {
+    background-size: 100% 1px, auto;
+}

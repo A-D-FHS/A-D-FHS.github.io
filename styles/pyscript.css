@@ -1,0 +1,156 @@
+body {
+    background-color: #1e1e1e;
+    color: #c7c7c7;
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    line-height: 1.6;
+    margin: 0;
+    padding: 20px;
+    text-align: left;
+}
+
+h1 {
+    font-size: 2.5em;
+    margin-bottom: 0;
+    margin-top: 0.5rem;
+}
+
+h2, h3, h4, h5, h6 {
+    color: #fff;
+    margin-bottom: 0.5rem;
+    margin-top: 0.5rem;
+}
+
+a {
+    color: #4e89ff;
+    text-decoration: none;
+    background-size: 0 2px, auto;
+    background-repeat: no-repeat;
+    background-position: left bottom, left bottom;
+    background-image: linear-gradient(#4e89ff, #4e89ff), none;
+    transition: background-size 0.3s ease-in-out;
+}
+
+a:hover {
+    background-size: 100% 2px, auto;
+}
+
+article {
+    width: 80vw;
+    max-width: 70vw;
+    margin: 1em auto;
+    padding: 20px;
+    background-color: #2e2e2e;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.2);
+    overflow-x: scroll;
+}
+
+li {
+    font-size: 0.9rem;
+}
+
+li .bulletpoint {
+    color: #4FD1C5;
+    font-size: 1rem;
+    margin-bottom: 0;
+}
+
+.examples li {
+    list-style: decimal;
+    margin: 0;
+    font-size: 1rem;
+}
+
+.annotation {
+    color: #4fd1c5;
+    font-style: italic;
+    font-size: 0.6rem;
+    margin-bottom: 0;
+    margin-top: 0.5em;
+}
+
+.highlight {
+    color: #4fd1c5;
+}
+
+.small {
+    font-size: 0.8rem;
+    margin-top: 0;
+    margin-bottom: 1em;
+}
+
+code {
+    background-color: #333333;
+    color: #c7c7c7;
+    font-family: 'Consolas', 'Monaco', 'Courier New', monospace;
+    border-radius: 3px;
+    display: block;
+    overflow-x: scroll;
+}
+
+/* Syntax Highlighting */
+
+/* HTML */
+
+code.html .element {
+    color: #e06c75;
+}
+
+code.html .attribute_value {
+    color: #98c379;
+}
+
+code.html .attribute {
+    color: #d39855;
+}
+
+code.html .comment {
+    color: #5c6370;
+}
+
+/* Python */
+
+code.python .import {
+    color: #c678bc;
+}
+
+code.python .function {
+    color: #61afef;
+}
+
+code.python .string {
+    color: #98c379;
+}
+
+code.python .comment {
+    color: #5c6370;
+}
+
+code.python .class {
+    color: #c678bc;
+}
+
+code.python .classname {
+    color: #e5c07b;
+}
+
+code.python .function {
+    color: #61afef;
+}
+
+/* JavaScript */
+
+code.javascript .class {
+    color: #c678bc;
+}
+
+code.javascript .classname {
+    color: #e5c07b;
+}
+
+code.javascript .comment {
+    color: #5c6370;
+}
+
+code.javascript .keyword {
+    color: #c678bc;
+}

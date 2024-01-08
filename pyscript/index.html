@@ -1,0 +1,192 @@
+<!DOCTYPE html>
+<html lang="de">
+<head>
+    <!-- meta -->
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <!-- external -->
+    <link rel="stylesheet" href="../styles/article.css">
+    <link rel="stylesheet" href="../styles/syntax_highlighting.css">
+    <link rel="stylesheet" href="../styles/scrollbar.css">
+
+    <!-- internal -->
+    <title>PyScript</title>
+    <link rel="icon" type="image/x-icon" href="../images/pyscript_icon.png">
+</head>
+<body>
+    <article><a href="../index.html">Zurück zur Startseite</a></article>
+    <article>
+        <h1><a href="https://pyscript.net/">PyScript</a></h1>
+        <p class="small">Ein Python-Framework für Webanwendungen</p>
+        <section class="summary">
+            <h2>Übersicht</h2>
+            <ol>
+                <li><a href="#introduction">Einführung</a></li>
+                <li><a href="#features">Funktionen</a></li>
+                <li><a href="#howto">Wie kann man PyScript nutzen?</a></li>
+                <li><a href="#python_and_js">Python & JavaScript</a></li>
+                <li><a href="#tips_and_tricks">Tipps und Tricks</a></li>
+                <li><a href="#examples">Beispiele</a></li>
+                <li><a href="#source">Quellen</a></li>
+            </ol>
+        </section>
+        <section id="introduction">
+            <h2>Einführung</h2>
+            <h3>Python im Browser</h3>
+            <p class="block">
+                PyScript ist ein Framework,
+                mit dem umfangreiche Python-Anwendungen im Browser erstellt werden können.<br>
+                Es nutzt die HTML-Schnittstelle sowie die Leistungsfähigkeit von <a href="https://webassembly.org">WebAssembly</a>, <a href="https://pyodide.org">Pyodide</a> und anderen modernen Web-Technologien.<br>
+                Das PyScript-Framework bietet Anwendern aller Erfahrungsstufen Zugang zu einer
+                leicht zu erlernbaren Programmiersprache mit vielen Anwendungsmöglichkeiten.
+            </p>
+        </section>
+        <section id="features">
+            <h4>Was hat PyScript zu bieten?</h4>
+            <ul>
+                <li><span class="bulletpoint">Python im Browser:</span> Drop-in-Inhalte, externes Datei-Hosting und Anwendungs-Hosting ohne Abhängigkeit von serverseitiger Konfiguration</li>
+                <li><span class="bulletpoint">Python-Ökosystem:</span> Viele Python-Bibliotheken (z. B. numpy, pandas, scikit-learn und andere)</li>
+                <li><span class="bulletpoint">Python mit JavaScript:</span> Bidirektionale Kommunikation zwischen Python- und JavaScript-Objekten</li>
+                <li><span class="bulletpoint">Environment Management:</span> Benutzer können festlegen, welche Pakete und Dateien enthalten sein müssen, damit der Seitencode ausgeführt werden kann.</li>
+                <li><span class="bulletpoint">Visuelle Anwendungsentwicklung:</span> Einfache Bedienung von UI-Komponenten wie Buttons, Containern, Textfeldern und mehr.</li>
+                <li><span class="bulletpoint">Flexibles Framework:</span> Ein flexibles Framework, das direkt in Python verwendet werden kann, um neue steckbare und erweiterbare Komponenten zu erstellen und gemeinsam zu nutzen.</li>
+                <li>Und mehr...</li>
+            </ul>
+            <p>
+                PyScript ist nichts anderes als HTML, nur viel mächtiger dank des reichhaltigen und zugänglichen Ökosystems der Python-Bibliotheken.<br>
+                Die Idee hinter PyScript ist es, jedem Benutzer eine einfache Möglichkeit zu bieten, seine eigenen Webanwendungen zu erstellen.
+            </p>
+        </section>
+        <section id="howto">
+            <h2>Wie kann man PyScript nutzen?</h2>
+            <ol>
+                <li>
+                    <p>Erstelle eine Datei mit der Endung <span class="highlight">.py</span></p>
+                </li>
+                <li>
+                    <p>Binde PyScript in deine Website ein</p>
+                    <p class="annotation">HTML</p>
+                    <code class="html">
+                        &lt;<span class="element">head</span>&gt;<br>
+                        &nbsp;&nbsp; &lt;<span class="element">link</span> <span class="attribute">rel</span>=<span class="attribute_value">"stylesheet"</span> <span class="attribute">href</span>=<span class="attribute_value">"https://pyscript.net/releases/2023.11.1/pyscript.css"</span>/&gt;<br>
+                        &nbsp;&nbsp; &lt;<span class="element">script</span> <span class="attribute">defer</span> <span class="attribute">type</span>=<span class="attribute_value">"module"</span> <span class="attribute">src</span>=<span class="attribute_value">"https://pyscript.net/releases/2023.11.1/core.js"</span>&gt;&lt;/<span class="element">script</span>&gt;<br>
+                        &nbsp;&nbsp; <span class="comment">&lt;!-- Anderer Code --&gt;</span><br>
+                        &lt;<span class="element">/head</span>&gt;
+                    </code>
+                </li>
+                <li>
+                    <p>Verlinke die Python Datei</p>
+                    <p class="annotation">HTML</p>
+                    <code class="html">
+                        &lt;<span class="element">head</span>&gt;<br>
+                        &nbsp;&nbsp; &lt;<span class="element">py-script</span> <span class="attribute">src</span>=<span class="attribute_value">"pfad/zum/script.py"</span> <span class="attribute">defer</span>&gt;&lt;<span class="element">/py-script</span>&gt;<br>
+                        &nbsp;&nbsp; <span class="comment">&lt;!-- Anderer Code --&gt;</span><br>
+                        &lt;<span class="element">/head</span>&gt;
+                    </code>
+                </li> 
+            </ol>
+        </section>
+        <section id="python_and_js">
+            <h2>Python & JavaScript</h2>
+            <h3>Verwendung des JavaScript-Moduls</h3>
+            <p>
+                Für viele Anwendungen ist der Zugriff auf JavaScript-Elemente, wie beispielsweise
+                Buttons, Textfelder oder das gesamte Dokument wichtig.<br>
+                Mit PyScript lässt ist das einfach durch das JavaScript-Modul möglich.<br>
+                Dazu muss zu Beginn des Python-Skripts das JavaScript-Modul importiert werden.
+            </p>
+            <p class="annotation">Python & PyScript</p>
+            <code class="python">
+                <span class="import">import</span> js
+            </code>
+            <p>
+                Damit ist es möglich, auf JavaScript-Elemente zuzugreifen. 
+                Um beispielsweise auf ein Element mit einer spezifischen ID zu verweisen, 
+                kann man das folgendermaßen tun:
+            </p>
+            <p class="annotation">Python & PyScript</p>
+            <code class="python">
+                <span class="import">from</span> js <span class="import">import</span> document<br>
+                element = document.<span class="function">getElementById</span>(<span class="string">"id_deines_html_elements"</span>)
+            </code>
+            <p>In vielen Fällen lässt sich auch das pyscript-Modul verwenden.</p>
+            <p class="annotation">Python & PyScript</p>
+            <code class="python">
+                <span class="import">from</span> pyscript <span class="import">import</span> document<br>
+                document.<span class="attribute">title</span> = <span class="string">"titel_deiner_website"</span>
+            </code>
+        </section>
+        <section id="tips_and_tricks">
+            <h2>Tipps und Tricks</h2>
+            <h3>JavaScript-Klassen in PyScript</h3>
+            <p>
+                Klassen sind ein grundlegendes Konzept in vielen Programmiersprachen, einschließlich JavaScript & PyScript.<br>
+                Sie bieten eine Möglichkeit, Code zu strukturieren und Daten sowie Verhalten zu kapseln.<br>
+            </p>
+            <p class="annotation">Python & PyScript</p>
+            <code class="python">
+                <span class="class">class</span> <span class="classname">MyClass</span>:<br>
+                &nbsp;&nbsp;<span class="comment">#...</span><br>
+                myClass = <span class="classname">MyClass</span>()
+            </code>
+            <p class="annotation">JavaScript</p>
+            <code class="javascript">
+                <span class="class">class</span> <span class="classname">MyClass</span> {<br>
+                    &nbsp;&nbsp;<span class="comment">//...</span><br>
+                }<br>
+                <span class="keyword">const</span> myClass = <span class="class">new</span> <span class="classname">MyClass</span>();
+            </code>
+            <p>
+                Ein häufiges Problem entsteht beim Aufruf von JavaScript-Klassen über ein JavaScript-Modul.<br>
+                Dies lässt sich jedoch einfach lösen, indem man das <span class="highlight">new</span>-Schlüsselwort beim Instanziieren der Klasse nutzt.
+            </p>
+            <p class="annotation">Python & PyScript</p>
+            <code class="python">
+                <span class="import">from</span> js <span class="import">import</span> <span class="classname">Audio</span><br>
+                myClass = <span class="classname">Audio</span>.<span class="function">new</span>(<span class="string">"pfad/zum/datei.mp3"</span>)
+            </code>
+            <h3>Endlosschleifen</h3>
+            <p>
+                In der Spieleentwicklung ist es üblich, eine endlose Schleife, bekannt als <a href="https://de.wikipedia.org/wiki/Game_Loop">Game Loop</a>, zu erstellen.<br>
+                In PyScript erreicht man das durch die Verwendung des <a href="https://pyodide.org/en/stable/">pyodide-Moduls</a> in Kombination mit dem JavaScript-Modul.
+            </p>
+            <ol>
+                <li>create_proxy und setInterval aus dem <a href="https://pyodide.org/en/stable/">pyodide-Modul</a> & JS-Modul importieren
+                    <p class="annotation">Python & PyScript</p>
+                    <code class="python">
+                        <span class="import">from</span> pyodide <span class="import">import</span> create_proxy<br>
+                        <span class="import">from</span> js <span class="import">import</span> setInterval
+                    </code>
+                </li>
+                <li>Die Funktion in einem <a href="https://pyodide.org/en/stable/usage/api/python-api/ffi.html#pyodide.ffi.create_proxy">proxy</a> wandeln
+                    <p class="annotation">Python & PyScript</p>
+                    <code class="python">
+                        proxy = <span class="function">create_proxy</span>(name_der_funktion)
+                    </code>
+                </li>
+                <li>
+                    Die Endlosschleife erstellen
+                    <p class="annotation">Python & PyScript</p>
+                    <code class="python">
+                        <span class="function">setInterval</span>(proxy, <span class="number">zeit_zwischen_wiederholungen</span>)
+                    </code>
+                </li>
+            </ol>
+        </section>
+        <section id="examples">
+            <h4>Eigene Beispiele</h4>
+            <ul class="examples">
+                <li><a href="../numbers/">Zahlenraten</a> <span class="small">(Zahlenraten erstellt mit PyScript)</span></li>
+                <li><a href="../snake/">PySnake</a> <span class="small">(Snake erstellt mit PyScript)</span></li>
+            </ul>
+        </section>
+        <section id="source">
+            Quellen:
+            <a href="https://pyscript.net">Offizielle PyScript Website</a>, 
+            <a href="https://docs.pyscript.net">Offizielle PyScript Dokumentation</a> sowie
+            <a href="https://pyodide.org/">die Offizielle Pyodide Dokumentation</a>
+        </section>
+    </article>
+</body>
+</html>

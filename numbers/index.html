@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html lang="de">
+<head>
+    <!-- meta -->
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <!-- external -->
+    <link rel="stylesheet" href="../styles/numbers.css">
+    <link rel="stylesheet" href="../styles/scrollbar.css">
+    
+
+    <!-- pyscript -->
+    <link rel="stylesheet" href="https://pyscript.net/releases/2023.11.1/pyscript.css"/>
+    <script defer type="module" src="https://pyscript.net/releases/2023.11.1/core.js"></script>
+
+    <!-- internal -->
+    <link rel="icon" type="image/x-icon" href="../images/numbers_icon.png">
+    <title>Zahlenraten</title>
+</head>
+<body>
+    <p id="status" style="margin-bottom: 0;">Lade PyScript...</p>
+    <h1>Zahlenraten</h1>
+    <p>Errate die Nummer zwischen 1 und 100</p>
+    <div>
+        <input type="number" id="guess" min="0" max="100" placeholder="Nummer zwischen 1-100" value="0">
+        <button id="submit">Raten!</button>
+    </div>
+
+    <div>
+        <p id="guesses">10/10 Versuche</p>
+        <p id="hint"></p>
+    </div>
+
+    <p style="margin-bottom: 0;">
+        Erstellt mit PyScript. <a href="../pyscript/index.html">Mehr erfahren</a>
+        oder einen Blick <a href="./script.html">hinter die Kulissen</a> werfen.
+    </p><br>
+    <a href="/index.html">Zurück zur Startseite.</a>
+</body>
+<script>
+    console.log("Initializing PyScript...")
+</script>
+<py-script src="../scripts/python/numbers.py" defer></py-script>
+</html>

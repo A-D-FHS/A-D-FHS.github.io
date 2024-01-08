@@ -1,0 +1,15 @@
+body {
+    background-color: #2d2e35;
+    color: #FFFFFF;
+    font-family: Arial, sans-serif;
+    font-size: 16px;
+    padding: 10px;
+    display: flex;
+    align-items: center;
+    flex-direction: column;
+}
+
+a {
+    text-decoration: underline;
+    color: white;
+}
