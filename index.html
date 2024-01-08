@@ -1,0 +1,70 @@
+<!DOCTYPE html>
+<html lang="de">
+<head>
+    <!-- meta -->
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    
+    <!-- external -->
+    <link rel="stylesheet" href="./styles/homepage.css">
+    <link rel="stylesheet" href="./styles/scrollbar.css">
+
+    <!-- internal -->
+    <link rel="icon" type="image/x-icon" href="./images/home_icon.png">
+    <title>Startseite</title>
+</head>
+<body>
+    <section>
+        <h1>Startseite</h1>
+        <p style="margin-bottom: 15px;">Eine Sammlung verschiedener Ideen wie Spiele, Dokumentationen und allerlei Nützlichem.</p>
+    </section>
+
+    <div class="category docs">
+        <section>
+            <h2>Nüztliches</h2>
+            <p>Verschiedene Dokumentationen, Hilfestellungen und mehr...</p>
+        </section>
+        <div class="items">
+            <a href="./pyscript/index.html">
+                <img src="./images/pyscript_icon.png">
+                <p>PyScript</p>
+            </a>
+            <a href="./trusted/index.html">
+                <img src="https://cdn-icons-png.flaticon.com/128/8441/8441967.png">
+                <p>Websites</p>
+            </a>
+        </div>
+    </div>
+    <div class="category games">
+        <section>
+            <h2>Spiele</h2>
+            <p>Verschiedene Spiele</p>
+        </section>
+        <div class="items">
+            <a href="./snake/index.html">
+                <img src="./images/snake_icon.png">
+                <p>PySnake</p>
+            </a>
+            <a href="./numbers/index.html">
+                <img src="./images/numbers_icon.png">
+                <p>Zahlenraten</p>
+            </a>
+        </div>
+    </div>
+    <div class="links">
+        <a href="./source.html">Externe Resourcen</a>
+    </div>
+</body>
+
+<script>
+document.querySelectorAll('.category').forEach((category) => {
+    category.addEventListener('click', (event) => {
+        if (event.target.closest('a')) return;
+
+        category.classList.toggle('collapsed');
+        const items = category.querySelector('.items');
+        items.style.display = items.style.display === 'flex' ? 'none' : 'flex';
+    });
+});
+</script>
+</html>
